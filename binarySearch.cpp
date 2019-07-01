@@ -85,5 +85,26 @@ int main() {
 ////////////////////////////////////////
 
 int binarySearch(vector<int> arr, int value) {
+	int mid = arr.size() / 2;
+	int startIdx = 0, endIdx = arr.size() - 1;
+
+	while (startIdx < endIdx)
+	{
+		if (arr[mid] == value)
+			return value;
+		else if (value < arr[mid])
+		{
+			endIdx = mid;
+			mid /= 2;
+			continue;
+		}
+		else
+		{
+			startIdx = mid + 1;
+			mid += mid / 2;
+			continue;
+		}
+	}
+
 	return -1;
 }
