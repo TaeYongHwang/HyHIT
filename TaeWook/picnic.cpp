@@ -7,13 +7,8 @@ const int FACT[5] = {1,2,6,24,120};
 
 vector<vector<int>> friend_list;
 vector<int> student_list;
-vector<int> result;
-
-
-int sum;
 
 int get_combination(int num_of_student, int count);
-//int is_friend();
 
 int main() {
 	int num_of_student;
@@ -44,20 +39,15 @@ int main() {
 			friend_list[student1][student2] = 1;
 			friend_list[student2][student1] = 1;
 		}
-
-		if((num_of_student % 2) == 0 && num_of_student != 0) {
-			result.push_back(get_combination(num_of_student, 0) / FACT[(num_of_student/2) - 1]);
-		} else if(num_of_pair < (num_of_student / 2)) {
-			result.push_back(0);
+		if(num_of_pair < (num_of_student / 2)) { 
+			cout << 0 << endl;
+		} else if((num_of_student % 2) == 0 && num_of_student != 0) {
+			cout << (get_combination(num_of_student, 0)) << endl;
 		} else {
-			result.push_back(0);
+			cout << 0 << endl;
 		}
 		student_list.clear();
 		friend_list.clear();
-	}
-
-	for(iter = result.begin(); iter != result.end(); iter++) {
-		cout << *iter << endl;
 	}
 }
 
@@ -84,7 +74,12 @@ int get_combination(int num_of_student, int count) {
 			if(friend_list[student1][student2] == 0) {
 				isOk = false;
 			}
+		} else if((count % 2) == 0 && count > 0) {
+			if(student_list[count] > student_list[count-2]) {
+				isOk = false;
+			}
 		}
+
 		if(isOk == true) {
 			sum += get_combination(num_of_student, count+1);
 		}
@@ -94,23 +89,3 @@ int get_combination(int num_of_student, int count) {
 	}
 	return sum;
 }
-/*
-int is_friend() {
-	vector<int>::iterator iter;
-	vector<int>::iterator iter_list;
-
-	for(iter = student_list.begin(); iter != student_list.end(); iter += 2) {
-		int exist = 0;
-		for(iter_list = friend_list[*iter].begin(); iter_list < friend_list[*iter].end(); iter_list++) {
-			if(*(iter + 1) == *iter_list) {
-				exist++;
-				break;
-			}
-		}
-		if(exist == 0) {
-			return 0;
-		}
-	}		
-	return 1;
-}
-*/
