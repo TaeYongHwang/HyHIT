@@ -1,20 +1,20 @@
-ï»¿ì•Œê³ ë¦¬ì¦˜ì—ì„œ ìœ ìš©í•œ STL
+¾Ë°í¸®Áò¿¡¼­ À¯¿ëÇÑ STL
 
 
 1. #include < algorithm >
 - find ( first, last, val)
--> lastì˜ ì•ê¹Œì§€ ì°¾ëŠ”ë‹¤.
+-> lastÀÇ ¾Õ±îÁö Ã£´Â´Ù.
 ex)
 vector< int >::iterator FindIter;
 FindIter = find( CharItems.begin(), CharItems.end(), 12 );
 - for_each ( first, last, func)
--> ë°ì´í„°ë¥¼ í•¨ìˆ˜ì˜ íŒŒë¼ë¯¸í„°ë¡œ ë„˜ê²¨ì„œ í•¨ìˆ˜ë¥¼ ì‹¤í–‰ì‹œí‚´.
+-> µ¥ÀÌÅÍ¸¦ ÇÔ¼öÀÇ ÆÄ¶ó¹ÌÅÍ·Î ³Ñ°Ü¼­ ÇÔ¼ö¸¦ ½ÇÇà½ÃÅ´.
 
 ex)
 for_each( Users.begin() + 1, Users.end(), updatePlayTime );
 
 * next_permutation, prev_permutation
-->í˜„ì¬ ìˆ˜ì—´ì—ì„œ ë‹¤ìŒ, ì´ì „ ìˆœì—´ êµ¬í•˜ê³  TFë°˜í™˜
+->ÇöÀç ¼ö¿­¿¡¼­ ´ÙÀ½, ÀÌÀü ¼ø¿­ ±¸ÇÏ°í TF¹İÈ¯
 
 * mix(), max()
 
@@ -22,21 +22,21 @@ for_each( Users.begin() + 1, Users.end(), updatePlayTime );
 ex)
 next_permutation(v.begin(), v.end());
 
-2. #include <vector>
+2. #include < vector >
 - https://hyeonstorage.tistory.com/324
 * vector<int> v;
 * v.push_back();
 _ v.pop_back();
 
-3. #include <utility>
+3. #include < utility >
 * https://wootool.tistory.com/55
 * pair < int, int > p1;
 p1 = make_pair(10,20);
 * pair < int, int > p2(30,40);
-* first, secondë¡œ ì ‘ê·¼ê°€ëŠ¥.
+* first, second·Î Á¢±Ù°¡´É.
 
 
-4. #include <string>
+4. #include < string >
 - str1.size(); == str1.length();
 - str1.substr(...);
 
