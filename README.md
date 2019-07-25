@@ -46,3 +46,6 @@ first, second로 접근가능.
  - str1.size(); == str1.length();
  - str1.substr(...);
 
+5. #include <limits>
+ - std :: numeric_limits< long long > ::min();
+ - std :: numeric_limits<int>::max()
