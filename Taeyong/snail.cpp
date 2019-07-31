@@ -18,7 +18,7 @@ double find_possible_cases(int row, int col)
 	//basecase 1 :기한이 끝난경우
 	if (row == 0) {
 		//길이가 아직 남은경우
-		if (col >0) 
+		if (col > 0)
 			return ret = 0;
 		//길이가 끝난 경우
 		else
@@ -59,15 +59,18 @@ int main()
 {
 	int C;
 	cin >> C;
+
+	for (int i = 0; i <= 1000; i++) {
+		for (int j = 0; j <= 1000; j++) {
+			cache[i][j] = -1;
+		}
+	}
+
 	while (C--)
 	{
 		cin >> N >> M;
 
-		for (int i = 0; i <= M; i++) {
-			for (int j = 0; j <= N; j++) {
-				cache[i][j] = -1;
-			}
-		}
+
 
 		cout << find_possible_cases(M, N) << endl;
 
