@@ -20,29 +20,21 @@ int main()
 		char gender;
 		int temp;
 		cin >> name >> gender >> temp;
-		candidate.push_back({ name, {gender,temp} });
+		//candidate.push_back({ name, {gender,temp} });
+
+		if (myPreference.size() != 1) {
+			if (temp <= dist)
+				ans.push_back(name);
+		}
+		else
+		{
+			if (gender == myPreference[0])
+				if (temp <= dist)
+					ans.push_back(name);
+		}
 
 	}
 
-	//MF or FM ->거리만계산
-	if (myPreference.size() != 1) {
-		for (int i = 0; i < candidate.size(); i++) {
-			if (candidate[i].second.second <= dist)
-				ans.push_back(candidate[i].first);
-		}
-	}else
-	{
-		for (int i = 0; i < candidate.size(); i++) {
-			if (candidate[i].second.first == myPreference[0]) {
-				if (candidate[i].second.second <= dist) {
-					ans.push_back(candidate[i].first);
-				}
-			}
-
-		}
-
-
-	}
 
 	if (ans.size() == 0)
 		cout << "No one yet" << endl;
